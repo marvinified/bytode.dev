@@ -1,10 +1,10 @@
 import { baseUrl } from 'app/sitemap'
-import { getBlogPosts } from 'app/blog/utils'
+import { getThoughts } from 'app/thoughts/utils'
 
 export async function GET() {
-  let allBlogs = await getBlogPosts()
+  let allThoughts = await getThoughts()
 
-  const itemsXml = allBlogs
+  const itemsXml = allThoughts
     .sort((a, b) => {
       if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
         return -1
@@ -15,7 +15,7 @@ export async function GET() {
       (post) =>
         `<item>
           <title>${post.metadata.title}</title>
-          <link>${baseUrl}/blog/${post.slug}</link>
+          <link>${baseUrl}/thoughts/${post.slug}</link>
           <description>${post.metadata.summary || ''}</description>
           <pubDate>${new Date(
             post.metadata.publishedAt
@@ -27,9 +27,9 @@ export async function GET() {
   const rssFeed = `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0">
     <channel>
-        <title>My Portfolio</title>
+        <title>Hi, I'm Marvin</title>
         <link>${baseUrl}</link>
-        <description>This is my portfolio RSS feed</description>
+        <description>I build software mostly around AI, automation, and agents. Currently building Stagerun. I randomly share my written thoughts here: notes from the trenches... what I’m learning, what I’m building,  what broke, without leaving out the times I over-engineered a simple solution.</description>
         ${itemsXml}
     </channel>
   </rss>`

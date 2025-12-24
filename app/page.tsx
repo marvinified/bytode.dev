@@ -1,20 +1,25 @@
-import { BlogPosts } from 'app/components/posts'
+import { ThoughtsPosts } from 'app/components/posts'
 
 export default function Page() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        My Portfolio
-      </h1>
-      <p className="mb-4">
-        {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
-        Vim's keystroke commands and tabs' flexibility for personal viewing
-        preferences. This extends to my support for static typing, where its
-        early error detection ensures cleaner code, and my preference for dark
-        mode, which eases long coding sessions by reducing eye strain.`}
-      </p>
-      <div className="my-8">
-        <BlogPosts />
+      <div className="prose">
+        <h2>
+          Hello human! or bot?
+        </h2>
+        <p>
+          I'm <strong>Marvin</strong>, definitely not a robot.
+        </p>
+        <p>
+          I build software mostly around AI, automation, and agents. Currently building <a href="https://stagerun.ai">Stagerun</a>.
+        </p>
+
+        <p>
+          I randomly share my written <a href="/thoughts">thoughts</a> here: notes from the trenches... what I’m learning, what I’m building,  what broke, without leaving out the times I over-engineered a simple solution.
+        </p>
+      </div>
+      <div className="my-12">
+        <ThoughtsPosts />
       </div>
     </section>
   )
