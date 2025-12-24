@@ -25,15 +25,15 @@ const fustat = Fustat({
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter',
+    default: 'I\'m Marvin',
+    template: '%s | I\'m Marvin',
   },
-  description: 'This is my portfolio.',
+  description: 'I build software mostly around AI, automation, and agents. Currently building Stagerun.',
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title: 'I\'m Marvin',
+    description: 'I build software mostly around AI, automation, and agents. Currently building Stagerun.',
     url: baseUrl,
-    siteName: 'My Portfolio',
+    siteName: 'I\'m Marvin',
     locale: 'en_US',
     type: 'website',
   },
