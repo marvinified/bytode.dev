@@ -6,6 +6,7 @@ import { Navbar } from './components/nav'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
+import { EasterEggs, SourceCodeHint } from './components/easter-eggs'
 import { baseUrl } from './sitemap'
 
 const zain = Zain({
@@ -66,11 +67,13 @@ export default function RootLayout({
         fustat.variable
       )}
     >
-      <body className={`antialiased max-w-[520px] px-4 mx-auto mt-8 ${fustat.className}`}>
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
+      <body className={`antialiased px-4 h-dvh pt-8 ${fustat.className}`}>
+        <SourceCodeHint />
+        <main className="flex-auto max-w-[520px] mx-auto flex flex-col px-2 md:px-0">
           <Navbar />
           {children}
           <Footer />
+          <EasterEggs />
           <Analytics />
           <SpeedInsights />
         </main>

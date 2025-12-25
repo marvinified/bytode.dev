@@ -1,14 +1,15 @@
 import { ThoughtsPosts } from 'app/components/posts'
+import { NotARobotText, TimeBasedGreeting } from 'app/components/easter-eggs'
 
 export default function Page() {
   return (
     <section>
       <div className="prose">
         <h2>
-          Hello human! or bot?
+          <TimeBasedGreeting />
         </h2>
         <p>
-          I'm <strong>Marvin</strong>, definitely not a robot.
+          I'm <strong>Marvin</strong>, <NotARobotText />.
         </p>
         <p>
           I build software mostly around AI, automation, and agents. Currently building <a href="https://stagerun.ai">Stagerun</a>.

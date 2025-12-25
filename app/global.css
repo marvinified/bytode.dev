@@ -155,3 +155,331 @@ table {
 .title {
   text-wrap: balance;
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   EASTER EGG STYLES - Shh, these are secret!
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Glitch effect when typing "robot" */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  10% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+  20% {
+    transform: translate(2px, -2px);
+    filter: hue-rotate(180deg);
+  }
+  30% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(270deg);
+  }
+  40% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(360deg);
+  }
+  50% {
+    transform: translate(-2px, 2px);
+  }
+  60% {
+    transform: translate(2px, -2px);
+  }
+  70% {
+    transform: translate(-2px, -2px);
+  }
+  80% {
+    transform: translate(2px, 2px);
+  }
+  90% {
+    transform: translate(-2px, 2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.glitch-effect {
+  animation: glitch 0.3s ease-in-out infinite;
+}
+
+.glitch-effect * {
+  animation: glitch 0.2s ease-in-out infinite reverse;
+}
+
+/* Glitch message overlay */
+.glitch-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #000;
+  color: #e02518;
+  padding: 20px 40px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  z-index: 10000;
+  border: 2px solid #e02518;
+  box-shadow: 
+    0 0 20px rgba(224, 37, 24, 0.5),
+    inset 0 0 20px rgba(224, 37, 24, 0.1);
+  animation: messageGlitch 0.1s infinite;
+}
+
+@keyframes messageGlitch {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Robot mode indicator */
+.robot-mode-indicator {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #e02518, #ff6b6b);
+  color: white;
+  padding: 10px 30px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10001;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(224, 37, 24, 0.4);
+}
+
+.blink {
+  animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Robot reveal mode */
+.robot-reveal {
+  background: #0a0a0a !important;
+  color: #00ff00 !important;
+  transition: all 0.5s ease;
+}
+
+.robot-reveal * {
+  color: #00ff00 !important;
+  border-color: #00ff00 !important;
+}
+
+.robot-reveal a {
+  color: #e02518 !important;
+}
+
+/* Scanlines overlay for retro CRT effect */
+.scanlines-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  animation: scanlines 0.1s infinite;
+}
+
+@keyframes scanlines {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 4px; }
+}
+
+/* Not a robot text hover effect */
+.not-a-robot-text {
+  position: relative;
+  display: inline-block;
+}
+
+.not-a-robot-text:hover::after {
+  content: '🤖';
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  animation: peekRobot 0.3s ease forwards;
+}
+
+@keyframes peekRobot {
+  0% { opacity: 0; transform: translateY(-50%) scale(0); }
+  50% { opacity: 1; transform: translateY(-50%) scale(1.2); }
+  100% { opacity: 0; transform: translateY(-50%) scale(0); }
+}
+
+/* Late night greeting style */
+.late-night-greeting {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Secret page styling */
+.answer-42 {
+  font-size: 120px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #e02518, #ff6b6b, #47a3f3, #00ff00);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Typing cursor effect */
+.typing-cursor::after {
+  content: '█';
+  animation: cursorBlink 1s infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BARREL ROLL - Do a barrel roll!
+   ═══════════════════════════════════════════════════════════════ */
+
+.barrel-roll {
+  animation: barrelRoll 1s ease-in-out;
+}
+
+@keyframes barrelRoll {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MATRIX MODE - Welcome to the Matrix, Neo
+   ═══════════════════════════════════════════════════════════════ */
+
+.matrix-mode {
+  background: #0a0a0a !important;
+  transition: all 0.5s ease;
+}
+
+.matrix-mode * {
+  color: #00ff00 !important;
+  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+  transition: all 0.5s ease;
+}
+
+.matrix-mode a {
+  color: #00ff88 !important;
+}
+
+.matrix-mode p,
+.matrix-mode span,
+.matrix-mode li {
+  font-family: 'Courier New', monospace !important;
+}
+
+.matrix-cursor {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  color: #00ff00;
+  padding: 15px 30px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  z-index: 10000;
+  border: 1px solid #00ff00;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+  animation: matrixPulse 0.5s infinite;
+}
+
+@keyframes matrixPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GRAVITY - Everything falls down
+   ═══════════════════════════════════════════════════════════════ */
+
+.gravity-fall {
+  transform: translateY(100vh) rotate(var(--gravity-rotation, 15deg)) !important;
+}
+
+/* Randomize rotation for each element */
+.gravity-fall:nth-child(odd) {
+  --gravity-rotation: -20deg;
+}
+
+.gravity-fall:nth-child(even) {
+  --gravity-rotation: 25deg;
+}
+
+.gravity-fall:nth-child(3n) {
+  --gravity-rotation: -10deg;
+}
+
+.gravity-fall:nth-child(5n) {
+  --gravity-rotation: 30deg;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HIDDEN TEXT - Only visible when selected
+   ═══════════════════════════════════════════════════════════════ */
+
+.hidden-text {
+  color: transparent;
+  user-select: all;
+}
+
+.hidden-text::selection {
+  background-color: #e02518;
+  color: #fff;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   DISCO MODE - Party time!
+   ═══════════════════════════════════════════════════════════════ */
+
+.disco-mode {
+  animation: discoBackground 0.5s infinite;
+}
+
+.disco-mode * {
+  animation: discoText 0.3s infinite;
+}
+
+@keyframes discoBackground {
+  0% { background-color: #ff0080; }
+  25% { background-color: #00ff80; }
+  50% { background-color: #8000ff; }
+  75% { background-color: #ffff00; }
+  100% { background-color: #ff0080; }
+}
+
+@keyframes discoText {
+  0% { color: #00ffff; }
+  33% { color: #ff00ff; }
+  66% { color: #ffff00; }
+  100% { color: #00ffff; }
+}
