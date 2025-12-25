@@ -7,7 +7,7 @@ interface ThoughtsPostsProps {
 
 export function ThoughtsPosts({ showAll = false }: ThoughtsPostsProps) {
   const allThoughts = getThoughts()
-
+  const MAX_POSTS = Math.min(3, allThoughts.length -1)
   return (
     <div>
         {allThoughts
@@ -18,7 +18,7 @@ export function ThoughtsPosts({ showAll = false }: ThoughtsPostsProps) {
               return -1
             }
             return 1
-          }).slice(0, showAll ? undefined : 2)
+          }).slice(0, showAll ? undefined : MAX_POSTS)
           .map((post) => (
             <Link
               key={post.slug}
@@ -37,7 +37,7 @@ export function ThoughtsPosts({ showAll = false }: ThoughtsPostsProps) {
             </Link>
           ))}
           {
-            !showAll && allThoughts.length > 2 && (
+            !showAll && allThoughts.length > MAX_POSTS && (
               <Link href="/thoughts" className="text-neutral-900 underline">Older thoughts</Link>
             )
           }
