@@ -15,7 +15,7 @@ export default function Page() {
         </p>
 
         <p>
-          I randomly share my written <a href="/thoughts">thoughts</a> here: notes from the trenches... what I’m learning, what I’m building,  what broke, without leaving out the times I over-engineered a simple solution.
+          I share my written <a href="/thoughts">thoughts</a> here. Notes from the trenches... what I’m learning, what I’m building,  what broke, without leaving out the times I over-engineered a simple solution.
         </p>
       </div>
       <div className="my-12">

@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function Footer() {
   return (
     <footer className="mb-16">
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0">
+      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-6 md:space-y-0">
         <li>
           <a
             className="flex items-center transition-all hover:text-neutral-800 underline"
@@ -34,8 +34,8 @@ export default function Footer() {
             target="_blank"
             href="https://x.com/bytode"
           >
-            <Image src="/images/x.png" alt="X (Twitter)" width={10} height={10} />
-            <p className="ml-2">X (Twitter)</p>
+            <Image src="/images/x.png" alt="X (Twitter)" width={12} height={12} />
+            <p className="ml-2">X(twitter)</p>
           </a>
         </li>
       </ul>
