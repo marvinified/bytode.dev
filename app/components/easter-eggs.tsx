@@ -40,14 +40,14 @@ export function EasterEggs() {
     setTimeout(() => {
       document.body.classList.remove('glitch-effect')
       setGlitchText(null)
-    }, 1500)
+    }, 3000)
   }, [])
 
   const triggerBarrelRoll = useCallback(() => {
     document.body.classList.add('barrel-roll')
     setTimeout(() => {
       document.body.classList.remove('barrel-roll')
-    }, 1000)
+    }, 2000)
   }, [])
 
   const triggerMatrixMode = useCallback(() => {
@@ -64,7 +64,7 @@ export function EasterEggs() {
       document.body.classList.remove('matrix-mode')
       cursor.remove()
       setIsMatrixMode(false)
-    }, 8000)
+    }, 30000)
   }, [isMatrixMode])
 
   const triggerGravity = useCallback(() => {

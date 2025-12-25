@@ -62,12 +62,12 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-black bg-white',
+        'text-black bg-white overflow-hidden',
         zain.variable,
         fustat.variable
       )}
     >
-      <body className={`antialiased px-4 h-dvh pt-8 ${fustat.className}`}>
+      <body className={`antialiased px-4 h-dvh overflow-y-scroll overflow-x-hidden pt-8 ${fustat.className}`}>
         <SourceCodeHint />
         <main className="flex-auto max-w-[520px] mx-auto flex flex-col px-2 md:px-0">
           <Navbar />
