@@ -313,7 +313,7 @@ export function NotARobotText() {
   const [clickCount, setClickCount] = useState(0)
   
   const denials = [
-    "definitely not a robot",
+    "So, I'm definitely not a robot",
     "definitely NOT a robot",
     "DEFINITELY not a robot",
     "100% human, I promise",
@@ -322,7 +322,7 @@ export function NotARobotText() {
     "this is making me uncomfortable",
     "HUMAN.exe is running normally",
     "please stop, you're hurting my feelings.cpu",
-    "🤖 FINE. YOU GOT ME.",
+    "You're just stubborn... aren't you?",
   ]
 
   const handleClick = () => {

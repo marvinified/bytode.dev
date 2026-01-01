@@ -39,6 +39,9 @@ export default function Footer() {
           </a>
         </li>
       </ul>
+      <p className="text-sm my-4 text-neutral-500">
+        bytode = prefix<sub>3</sub>(<b>bytes</b>) || suffix<sub>3</sub>(<b>code</b>)
+      </p>
     </footer>
   )
 }
