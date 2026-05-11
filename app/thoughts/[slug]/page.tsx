@@ -3,6 +3,10 @@ import { CustomMDX } from 'app/components/mdx'
 import { formatDate, getThoughts } from 'app/thoughts/utils'
 import { baseUrl } from 'app/sitemap'
 
+function resolveOgImageUrl(title: string, description?: string) {
+  return `/og?title=${encodeURIComponent(title)}${description ? `&description=${encodeURIComponent(description)}` : ''}`
+}
+
 export async function generateStaticParams() {
   let posts = getThoughts()
 
@@ -22,11 +26,9 @@ export async function generateMetadata({ params }) {
     title,
     publishedAt: publishedTime,
     summary: description,
-    image,
+    image: _image,
   } = post.metadata
-  let ogImage = image
-    ? image
-    : `${baseUrl}/og?title=${encodeURIComponent(title)}`
+  let ogImage = resolveOgImageUrl(title, description)
 
   return {
     title,
@@ -58,7 +60,7 @@ export default async function Blog({ params }) {
 
   if (!post) {
     notFound()
-}
+  }
 
   return (
     <section>
@@ -73,9 +75,7 @@ export default async function Blog({ params }) {
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.publishedAt,
             description: post.metadata.summary,
-            image: post.metadata.image
-              ? `${baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+            image: resolveOgImageUrl(post.metadata.title, post.metadata.summary),
             url: `${baseUrl}/thoughts/${post.slug}`,
             author: {
               '@type': 'Person',
@@ -84,14 +84,18 @@ export default async function Blog({ params }) {
           }),
         }}
       />
-      <h1 className="title font-semibold text-3xl">
-        {post.metadata.title}
-      </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+      <div className="flex justify-between items-center my-4 text-sm">
         <p className="text-sm text-neutral-600">
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>
+      <h1 className="title font-semibold text-3xl">
+        {post.metadata.title}
+      </h1>
+      <p className="text-sm text-neutral-600 py-2">
+        {post.metadata.summary}
+      </p>
+
       <article className="prose">
         <CustomMDX source={post.content} />
       </article>

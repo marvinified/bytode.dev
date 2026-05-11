@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { formatDate, getThoughts } from 'app/thoughts/utils'
+import { HashIcon } from 'lucide-react';
 
 interface ThoughtsPostsProps {
   showAll?: boolean
@@ -7,9 +8,12 @@ interface ThoughtsPostsProps {
 
 export function ThoughtsPosts({ showAll = false }: ThoughtsPostsProps) {
   const allThoughts = getThoughts()
-  const MAX_POSTS = Math.min(3, allThoughts.length -1)
+  const MAX_POSTS = Math.min(3, allThoughts.length)
   return (
-    <div>
+    <div className="space-y-4">
+      <p className="text-sm text-neutral-700 font-semibold">My thoughts</p>
+      <div className="space-y-2">
+
         {allThoughts
           .sort((a, b) => {
             if (
@@ -25,9 +29,9 @@ export function ThoughtsPosts({ showAll = false }: ThoughtsPostsProps) {
               className="flex flex-col space-y-1 mb-2"
               href={`/thoughts/${post.slug}`}
             >
-              <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-                
-                <p className="text-neutral-400 w-[100px] whitespace-nowrap shrink-0">
+              <div className="w-full flex flex-col md:flex-row md:items-center space-x-0 md:space-x-2">
+                <HashIcon className="w-4 h-4" />
+                <p className="text-neutral-400 w-[90px] whitespace-nowrap shrink-0">
                   {formatDate(post.metadata.publishedAt, false)}
                 </p>
                 <p className="text-neutral-600 text-ellipsis overflow-hidden whitespace-nowrap">
@@ -36,11 +40,12 @@ export function ThoughtsPosts({ showAll = false }: ThoughtsPostsProps) {
               </div>
             </Link>
           ))}
-          {
-            !showAll && allThoughts.length > MAX_POSTS && (
-              <Link href="/thoughts" className="text-neutral-900 underline">Older thoughts</Link>
-            )
-          }
+        {
+          !showAll && allThoughts.length > MAX_POSTS && (
+            <Link href="/thoughts" className="text-neutral-900 underline text-sm">More</Link>
+          )
+        }
+      </div>
     </div>
   )
 }

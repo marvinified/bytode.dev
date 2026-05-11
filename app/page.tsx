@@ -17,7 +17,7 @@ export default function Page() {
         </p>
 
         <p>
-          Today, I build software with <a href="https://www.typescriptlang.org/">TypeScript</a>, <a href="https://www.python.org/">Python</a> & really any language that gets the job done. Mostly around AI, automation, and agents. Currently building <a href="https://stagerun.ai">Stagerun</a>.
+          Today, I build software with <a href="https://www.typescriptlang.org/">TypeScript</a>, <a href="https://www.python.org/">Python</a> & really any language that gets the job done. Primarily around AI, automations and agents. Currently building <a href="https://stagerun.ai">Stagerun</a> and <a href="https://atlascopilot.com">Atlas</a>.
         </p>
 
         <p>

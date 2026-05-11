@@ -37,6 +37,19 @@ export const metadata: Metadata = {
     siteName: 'I\'m Marvin',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/og',
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'I\'m Marvin',
+    description: 'I build software mostly around AI, automation, and agents. Currently building Stagerun.',
+    images: ['/og'],
   },
   robots: {
     index: true,
@@ -69,7 +82,7 @@ export default function RootLayout({
     >
       <body className={`antialiased px-4 h-dvh overflow-y-scroll overflow-x-hidden pt-8 ${fustat.className}`}>
         <SourceCodeHint />
-        <main className="flex-auto max-w-[520px] mx-auto flex flex-col px-2 md:px-0">
+        <main className="flex-auto max-w-[600px] mx-auto flex flex-col px-2 md:px-0">
           <Navbar />
           {children}
           <Footer />

@@ -53,6 +53,30 @@ function Code({ children, ...props }) {
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
 }
 
+function UnorderedList({ className, ...props }) {
+  return (
+    <ul
+      className={`list-disc pl-8 text-neutral-600 marker:text-neutral-600 marker:text-sm ${className || ''}`.trim()}
+      {...props}
+    />
+  )
+}
+
+function OrderedList({ className, ...props }) {
+  return (
+    <ol
+      className={`list-decimal ml-3 pl-8 [&>li]:pl-0 text-neutral-600 marker:text-neutral-600 marker:text-sm ${className || ''}`.trim()}
+      {...props}
+    />
+  )
+}
+
+function ListItem({ className, ...props }) {
+  return (
+    <li className={`pl-2 text-neutral-600 marker:text-neutral-600 ${className || ''}`.trim()} {...props} />
+  )
+}
+
 function slugify(str) {
   return str
     .toString()
@@ -96,6 +120,9 @@ let components = {
   Image: RoundedImage,
   a: CustomLink,
   code: Code,
+  ul: UnorderedList,
+  ol: OrderedList,
+  li: ListItem,
   Table,
 }
 
