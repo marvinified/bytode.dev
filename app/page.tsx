@@ -1,5 +1,6 @@
 import { ThoughtsPosts } from 'app/components/posts'
 import { NotARobotText, TimeBasedGreeting } from 'app/components/easter-eggs'
+import { HoverPreviewLink } from 'app/components/hover-preview-link'
 
 export default function Page() {
   return (
@@ -17,11 +18,11 @@ export default function Page() {
         </p>
 
         <p>
-          Today, I build software with <a href="https://www.typescriptlang.org/">TypeScript</a>, <a href="https://www.python.org/">Python</a> & really any language that gets the job done. Primarily around AI, automations and agents. Currently building <a href="https://stagerun.ai">Stagerun</a> and <a href="https://atlascopilot.com">Atlas</a>.
+          Today, I build software with <HoverPreviewLink href="https://www.typescriptlang.org/">TypeScript</HoverPreviewLink>, <HoverPreviewLink href="https://www.python.org/">Python</HoverPreviewLink> & really any language that gets the job done. Primarily around AI, automations and agents. Currently building <HoverPreviewLink href="https://stagerun.ai">Stagerun</HoverPreviewLink> and <HoverPreviewLink href="https://atlascopilot.com">Atlas</HoverPreviewLink>.
         </p>
 
         <p>
-          I share my written <a href="/thoughts">thoughts</a> here. Notes from the trenches... what I’m learning, what I’m building,  what broke, without leaving out the times I over-engineered a simple solution.
+          I share my written <HoverPreviewLink href="/thoughts">thoughts</HoverPreviewLink> here. Notes from the trenches... what I’m learning, what I’m building,  what broke, without leaving out the times I over-engineered a simple solution.
         </p>
       </div>
       <div className="my-12">

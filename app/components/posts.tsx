@@ -1,6 +1,6 @@
-import Link from 'next/link'
 import { formatDate, getThoughts } from 'app/thoughts/utils'
 import { HashIcon } from 'lucide-react';
+import { HoverPreviewLink } from './hover-preview-link'
 
 interface ThoughtsPostsProps {
   showAll?: boolean
@@ -24,7 +24,7 @@ export function ThoughtsPosts({ showAll = false }: ThoughtsPostsProps) {
             return 1
           }).slice(0, showAll ? undefined : MAX_POSTS)
           .map((post) => (
-            <Link
+            <HoverPreviewLink
               key={post.slug}
               className="flex flex-col space-y-1 mb-2"
               href={`/thoughts/${post.slug}`}
@@ -38,11 +38,11 @@ export function ThoughtsPosts({ showAll = false }: ThoughtsPostsProps) {
                   {post.metadata.title}
                 </p>
               </div>
-            </Link>
+            </HoverPreviewLink>
           ))}
         {
           !showAll && allThoughts.length > MAX_POSTS && (
-            <Link href="/thoughts" className="text-neutral-900 underline text-sm">More</Link>
+            <HoverPreviewLink href="/thoughts" className="text-neutral-900 underline text-sm">More</HoverPreviewLink>
           )
         }
       </div>
