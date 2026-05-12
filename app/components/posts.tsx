@@ -11,7 +11,6 @@ export function ThoughtsPosts({ showAll = false }: ThoughtsPostsProps) {
   const MAX_POSTS = Math.min(3, allThoughts.length)
   return (
     <div className="space-y-4">
-      <p className="text-sm text-neutral-700 font-semibold">My thoughts</p>
       <div className="space-y-2">
 
         {allThoughts

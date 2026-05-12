@@ -24,8 +24,12 @@ export default function Page() {
         <p>
           I share my written <HoverPreviewLink href="/thoughts">thoughts</HoverPreviewLink> here. Notes from the trenches... what I’m learning, what I’m building,  what broke, without leaving out the times I over-engineered a simple solution.
         </p>
+
+        <p>
+          You can read my most recent thoughts below.
+        </p>
       </div>
-      <div className="my-12">
+      <div className="my-6">
         <ThoughtsPosts />
       </div>
     </section>
