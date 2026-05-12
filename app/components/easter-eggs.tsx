@@ -367,7 +367,7 @@ export function TimeBasedGreeting() {
   if (hour >= 0 && hour < 5) {
     return (
       <span className="late-night-greeting">
-        Still awake? Me too. Sleep is for... humans? 
+        Awake? Same here. Sleep is for... humans? 
         <span className="text-xs ml-1 opacity-50">(wait, I mean...)</span>
       </span>
     )

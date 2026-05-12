@@ -14,11 +14,11 @@ export default function Page() {
         </p>
 
         <p>
-
+          Today, I build software with <HoverPreviewLink href="https://www.typescriptlang.org/">TypeScript</HoverPreviewLink>, <HoverPreviewLink href="https://www.python.org/">Python</HoverPreviewLink> & really any language that gets the job done. Primarily around AI, automations and agents.
         </p>
 
         <p>
-          Today, I build software with <HoverPreviewLink href="https://www.typescriptlang.org/">TypeScript</HoverPreviewLink>, <HoverPreviewLink href="https://www.python.org/">Python</HoverPreviewLink> & really any language that gets the job done. Primarily around AI, automations and agents. Currently building <HoverPreviewLink href="https://stagerun.ai">Stagerun</HoverPreviewLink> and <HoverPreviewLink href="https://atlascopilot.com">Atlas</HoverPreviewLink>.
+          Currently building <HoverPreviewLink href="https://stagerun.ai">Stagerun</HoverPreviewLink> and <HoverPreviewLink href="https://atlascopilot.com">Atlas</HoverPreviewLink>.
         </p>
 
         <p>

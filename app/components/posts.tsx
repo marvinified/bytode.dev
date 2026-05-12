@@ -30,10 +30,12 @@ export function ThoughtsPosts({ showAll = false }: ThoughtsPostsProps) {
               href={`/thoughts/${post.slug}`}
             >
               <div className="w-full flex flex-col md:flex-row md:items-center space-x-0 md:space-x-2">
-                <HashIcon className="w-4 h-4" />
-                <p className="text-neutral-400 w-[90px] whitespace-nowrap shrink-0">
-                  {formatDate(post.metadata.publishedAt, false)}
-                </p>
+                <div className="flex items-center space-x-2 text-sm">
+                  <HashIcon className="w-4 h-4 text-neutral-900" />
+                  <p className="text-neutral-400 w-[80px] whitespace-nowrap shrink-0">
+                    {formatDate(post.metadata.publishedAt, false)}
+                  </p>
+                </div>
                 <p className="text-neutral-600 text-ellipsis overflow-hidden whitespace-nowrap">
                   {post.metadata.title}
                 </p>
