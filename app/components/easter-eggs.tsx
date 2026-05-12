@@ -335,7 +335,7 @@ export function NotARobotText() {
   }
 
   return (
-    <span 
+    <p 
       onClick={handleClick}
       className="not-a-robot-text cursor-pointer select-none"
       style={{
@@ -345,7 +345,7 @@ export function NotARobotText() {
       title="Click me... if you dare"
     >
       {denials[clickCount]}
-    </span>
+    </p>
   )
 }
 
