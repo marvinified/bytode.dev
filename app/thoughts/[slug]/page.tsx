@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
 import { formatDate, getThoughts } from 'app/thoughts/utils'
 import { baseUrl } from 'app/sitemap'
+import { ArrowLeftIcon, Link } from 'lucide-react';
+import { HoverPreviewLink } from 'app/components/hover-preview-link';
 
 function resolveOgImageUrl(title: string, description?: string) {
   return `/og?title=${encodeURIComponent(title)}${description ? `&description=${encodeURIComponent(description)}` : ''}`
@@ -27,6 +29,7 @@ export async function generateMetadata({ params }) {
     publishedAt: publishedTime,
     summary: description,
     image: _image,
+    author,
   } = post.metadata
   let ogImage = resolveOgImageUrl(title, description)
 
@@ -99,6 +102,9 @@ export default async function Blog({ params }) {
       <article className="prose">
         <CustomMDX source={post.content} />
       </article>
+      <p className="text-sm text-neutral-600 py-2 flex items-center space-x-2">
+        <ArrowLeftIcon className="w-4 h-4" /> <HoverPreviewLink href="/thoughts">Back to all thoughts</HoverPreviewLink>
+      </p>
     </section>
   )
 }

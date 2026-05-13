@@ -1,5 +1,5 @@
 import { ThoughtsPosts } from 'app/components/posts'
-import { NotARobotText, TimeBasedGreeting } from 'app/components/easter-eggs'
+import { TimeBasedGreeting } from 'app/components/easter-eggs'
 import { HoverPreviewLink } from 'app/components/hover-preview-link'
 
 export default function Page() {
@@ -18,7 +18,8 @@ export default function Page() {
         </p>
 
         <p>
-          Currently building <HoverPreviewLink href="https://stagerun.ai">Stagerun</HoverPreviewLink> and <HoverPreviewLink href="https://atlascopilot.com">Atlas</HoverPreviewLink>.
+          Currently building <HoverPreviewLink href="https://stagerun.ai">Stagerun</HoverPreviewLink>.
+          {/* and <HoverPreviewLink href="https://atlascopilot.com">Atlas</HoverPreviewLink>. */}
         </p>
 
         <p>
