@@ -1,19 +1,19 @@
-import { formatDate, getThoughts } from 'app/thoughts/utils'
+import { formatDate, getCommits } from 'app/commits/utils'
 import { HashIcon } from 'lucide-react';
 import { HoverPreviewLink } from './hover-preview-link'
 
-interface ThoughtsPostsProps {
+interface CommitsPostsProps {
   showAll?: boolean
 }
 
-export function ThoughtsPosts({ showAll = false }: ThoughtsPostsProps) {
-  const allThoughts = getThoughts()
-  const MAX_POSTS = Math.min(3, allThoughts.length)
+export function CommitsPosts({ showAll = false }: CommitsPostsProps) {
+  const allCommits = getCommits()
+  const MAX_POSTS = Math.min(3, allCommits.length)
   return (
     <div className="space-y-4">
       <div className="space-y-2">
 
-        {allThoughts
+        {allCommits
           .sort((a, b) => {
             if (
               new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
@@ -26,7 +26,7 @@ export function ThoughtsPosts({ showAll = false }: ThoughtsPostsProps) {
             <HoverPreviewLink
               key={post.slug}
               className="flex flex-col space-y-1 mb-2 w-fit max-w-full"
-              href={`/thoughts/${post.slug}`}
+              href={`/commits/${post.slug}`}
             >
               <div className="flex flex-col md:flex-row md:items-center space-x-0 md:space-x-2">
                 <div className="flex items-center space-x-2 text-sm">
@@ -42,8 +42,8 @@ export function ThoughtsPosts({ showAll = false }: ThoughtsPostsProps) {
             </HoverPreviewLink>
           ))}
         {
-          !showAll && allThoughts.length > MAX_POSTS && (
-            <HoverPreviewLink href="/thoughts" className="text-neutral-900 underline text-sm">More</HoverPreviewLink>
+          !showAll && allCommits.length > MAX_POSTS && (
+            <HoverPreviewLink href="/commits" className="text-neutral-900 underline text-sm">More</HoverPreviewLink>
           )
         }
       </div>

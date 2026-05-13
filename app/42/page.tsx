@@ -29,7 +29,7 @@ export default function TheAnswerPage() {
           </p>
           
           <p className="text-xs text-neutral-400">
-            — Deep Thought, The Hitchhiker&apos;s Guide to the Galaxy
+            — Deep Commit, The Hitchhiker&apos;s Guide to the Galaxy
           </p>
         </div>
 

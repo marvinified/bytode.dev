@@ -1,4 +1,4 @@
-import { ThoughtsPosts } from 'app/components/posts'
+import { CommitsPosts } from 'app/components/posts'
 import { TimeBasedGreeting } from 'app/components/easter-eggs'
 import { HoverPreviewLink } from 'app/components/hover-preview-link'
 
@@ -14,24 +14,24 @@ export default function Page() {
         </p>
 
         <p>
-          Today, I build software with <HoverPreviewLink href="https://www.typescriptlang.org/">TypeScript</HoverPreviewLink>, <HoverPreviewLink href="https://www.python.org/">Python</HoverPreviewLink> & really any language that gets the job done. Primarily around AI, automations and agents.
+          Today, I build software with <HoverPreviewLink href="https://www.typescriptlang.org/">TypeScript</HoverPreviewLink>, <HoverPreviewLink href="https://www.python.org/">Python</HoverPreviewLink> & really any language that gets the job done. Primarily around AI, automations and agents. Currently building <HoverPreviewLink href="https://stagerun.ai">Stagerun</HoverPreviewLink>.
         </p>
 
         <p>
-          Currently building <HoverPreviewLink href="https://stagerun.ai">Stagerun</HoverPreviewLink>.
+          {/* Currently building <HoverPreviewLink href="https://stagerun.ai">Stagerun</HoverPreviewLink>. */}
           {/* and <HoverPreviewLink href="https://atlascopilot.com">Atlas</HoverPreviewLink>. */}
         </p>
 
         <p>
-          I share my written <HoverPreviewLink href="/thoughts">thoughts</HoverPreviewLink> here. Notes from the trenches... what I’m learning, what I’m building,  what broke, without leaving out the times I over-engineered a simple solution.
+          I commit my thoughts here. Notes from the trenches... what I’m learning, what I’m building,  what broke, without leaving out the times I over-engineered a simple solution.
         </p>
 
         <p>
-          You can read my most recent thoughts below.
+          You can read my most recent commits below.
         </p>
       </div>
       <div className="my-6">
-        <ThoughtsPosts />
+        <CommitsPosts />
       </div>
     </section>
   )

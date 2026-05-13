@@ -1,4 +1,4 @@
-import { getThoughts } from 'app/thoughts/utils'
+import { getCommits } from 'app/commits/utils'
 
 const defaultBaseUrl = 'https://bytode.dev'
 
@@ -11,15 +11,15 @@ export const baseUrl = normalizeBaseUrl(
 )
 
 export default async function sitemap() {
-  let thoughts = getThoughts().map((post) => ({
-    url: `${baseUrl}/thoughts/${post.slug}`,
+  let commits = getCommits().map((post) => ({
+    url: `${baseUrl}/commits/${post.slug}`,
     lastModified: post.metadata.publishedAt,
   }))
 
-  let routes = ['', '/thoughts'].map((route) => ({
+  let routes = ['', '/commits'].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString().split('T')[0],
   }))
 
-  return [...routes, ...thoughts]
+  return [...routes, ...commits]
 }

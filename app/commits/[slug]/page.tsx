@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
-import { formatDate, getThoughts } from 'app/thoughts/utils'
+import { formatDate, getCommits } from 'app/commits/utils'
 import { baseUrl } from 'app/sitemap'
 import { ArrowLeftIcon, Link } from 'lucide-react';
 import { HoverPreviewLink } from 'app/components/hover-preview-link';
@@ -10,7 +10,7 @@ function resolveOgImageUrl(title: string, description?: string) {
 }
 
 export async function generateStaticParams() {
-  let posts = getThoughts()
+  let posts = getCommits()
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -19,7 +19,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }) {
   const { slug } = await params
-  let post = getThoughts().find((post) => post.slug === slug)
+  let post = getCommits().find((post) => post.slug === slug)
   if (!post) {
     return
   }
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }) {
       description,
       type: 'article',
       publishedTime,
-      url: `${baseUrl}/thoughts/${post.slug}`,
+      url: `${baseUrl}/commits/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -59,7 +59,7 @@ export async function generateMetadata({ params }) {
 
 export default async function Blog({ params }) {
   const { slug } = await params
-  let post = getThoughts().find((post) => post.slug === slug)
+  let post = getCommits().find((post) => post.slug === slug)
 
   if (!post) {
     notFound()
@@ -79,7 +79,7 @@ export default async function Blog({ params }) {
             dateModified: post.metadata.publishedAt,
             description: post.metadata.summary,
             image: resolveOgImageUrl(post.metadata.title, post.metadata.summary),
-            url: `${baseUrl}/thoughts/${post.slug}`,
+            url: `${baseUrl}/commits/${post.slug}`,
             author: {
               '@type': 'Person',
               name: 'My Portfolio',
@@ -103,7 +103,7 @@ export default async function Blog({ params }) {
         <CustomMDX source={post.content} />
       </article>
       <p className="text-sm text-neutral-600 py-2 flex items-center space-x-2">
-        <ArrowLeftIcon className="w-4 h-4" /> <HoverPreviewLink href="/thoughts">Back to all thoughts</HoverPreviewLink>
+        <ArrowLeftIcon className="w-4 h-4" /> <HoverPreviewLink href="/commits">Back to all commits</HoverPreviewLink>
       </p>
     </section>
   )
